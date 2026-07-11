@@ -13,6 +13,8 @@ const serviceRoutes = require("./src/routes/serviceRoutes");
 const testimonialRoutes = require("./src/routes/testimonialRoutes");
 const galleryRoutes = require("./src/routes/galleryRoutes");
 
+const dashboardRoutes = require("./src/routes/dashboardRoutes");
+
 // Import database connection
 const { connectDB, pool } = require("./src/config/db");
 
@@ -56,6 +58,7 @@ const initDB = async () => {
 // Start database connection
 initDB();
 
+app.use("/api/dashboard", dashboardRoutes);
 // Routes
 app.use("/api/auth", authRoutes);
 app.use("/api/contacts", contactRoutes);
