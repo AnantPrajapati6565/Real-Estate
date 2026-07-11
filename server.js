@@ -16,6 +16,8 @@ const galleryRoutes = require("./src/routes/galleryRoutes");
 // Import database connection
 const { connectDB, pool } = require("./src/config/db");
 
+const dashboardRoutes = require("./src/routes/dashboardRoutes");
+
 // Initialize express app
 const app = express();
 
@@ -65,6 +67,9 @@ app.use("/api/projects", projectRoutes);
 app.use("/api/services", serviceRoutes);
 app.use("/api/testimonials", testimonialRoutes);
 app.use("/api/gallery", galleryRoutes);
+// ...
+
+app.use("/api/dashboard", dashboardRoutes);
 
 // Root route
 app.get("/", (req, res) => {
